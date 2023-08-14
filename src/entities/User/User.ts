@@ -1,28 +1,28 @@
-interface UserProps {
+export interface UserProps {
   id: string;
   name: string;
 }
 
 export class User {
-  private _props: UserProps;
+  private _userProps: UserProps;
 
   constructor(props: UserProps) {
-    this._props = props;
+    this._userProps = props;
   }
 
   get id(): string {
-    return this._props.id;
+    return this._userProps.id;
   }
 
   set id(id: string) {
-    this._props.id = id;
+    this._userProps.id = id;
   }
 
   get name(): string {
-    return this._props.name;
+    return this._userProps.name;
   }
 
   set name(name: string) {
-    this._props.name = name;
+    this._userProps.name = name;
   }
 }
