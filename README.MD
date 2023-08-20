@@ -27,7 +27,16 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 ## 🧱 Estrutura do Projeto <a name="estrutura"></a>
   ```
   src      
-  └───entities             
+  └───entities
+          └───Book
+              └───Book.spec.ts
+              └───Book.ts
+          └───BookLoan
+              └───BookLoan.spec.ts
+              └───BookLoan.ts
+          └───Library
+              └───Library.spec.ts
+              └───Library.ts         
           └───Student
               └───Student.spec.ts
               └───Student.ts
@@ -49,12 +58,13 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ## 🚩 Funcionalidades <a name="funcionalidades"></a>
 
-- [ ] Adicionar Livro: Adiciona um livro à lista de livros.
-- [ ] Registrar Usuário: Registra um novo usuário na biblioteca.
-- [ ] Realizar Empréstimo: Registra um novo empréstimo na biblioteca, atualizando as listas de empréstimos e disponibilidade de livros.
-- [ ] Realizar Devolução: Atualiza as informações do empréstimo após a devolução do livro.
-- [ ] Buscar Livro por Título: Retorna uma lista de livros que correspondem ao título informado.
-- [ ] Listar os ultimos empréstimos de um livro. 
+- [X] Adicionar Livro: Adiciona um livro à lista de livros
+- [X] Registrar Usuário: Registra um novo usuário na biblioteca
+- [X] Realizar Empréstimo: Registra um novo empréstimo na biblioteca, atualizando as listas de empréstimos e disponibilidade de livros
+- [X] Realizar Devolução: Atualiza as informações do empréstimo após a devolução do livro
+- [X] Buscar Livro por Título: Retorna uma lista de livros que correspondem ao título informado
+- [ ] Listar os ultimos empréstimos de um livro
+- [ ] Ao realizar um empréstimo, o sistema deve registrar os empréstimos em uma nova propriedade chamada histórico de empréstimos nas entidades Aluno e Professor
 
 ## 📚 Dependencias <a name="dependencias"></a>
   [Typescript](https://www.typescriptlang.org/download)
@@ -68,6 +78,10 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
   [Vitest](https://vitest.dev/guide/)
    ```
   npm install -D vitest
+   ```
+  [Vitest UI](https://vitest.dev/guide/ui.html)
+   ```
+  npm install -D @vitest/ui
    ```
   [ESLint](https://eslint.org/docs/latest/use/getting-started)
    ```
@@ -84,10 +98,25 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
    ```
 
 ## 🧪 Testes <a name="testes"></a>
+  [Vitest](https://vitest.dev/guide/)
    ``` 
    npm run test
    ```
+  [Vitest UI](https://vitest.dev/guide/ui.html)
+   ```
+  npm run test:ui
+   ```
+   ```ts
+   ✓ src/entities/User/User.spec.ts (1)
+   ✓ src/entities/Book/Book.spec.ts (1)
+   ✓ src/entities/BookLoan/BookLoan.spec.ts (2)
+   ✓ src/entities/Student/Student.spec.ts (1)
+   ✓ src/entities/Teacher/Teacher.spec.ts (1)
+   ✓ src/entities/Library/Library.spec.ts (3)
 
+   Test Files  6 passed (6)
+        Tests  9 passed (9)
+   ```
 ## 📝 Licença <a name="license"></a>
 MIT License
 
