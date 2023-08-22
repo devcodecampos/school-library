@@ -15,6 +15,18 @@ export class Library {
     this._libraryProps = libraryProps || { books: [], users: [], bookLoan: [] };
   }
 
+  get books(): Book[]{
+    return this._libraryProps.books
+  }
+
+  get users(): User[]{
+    return this._libraryProps.users
+  }
+
+  get bookLoan(): BookLoan[]{
+    return this._libraryProps.bookLoan
+  }
+
   addBook(book: Book): void {
     this._libraryProps.books.push(book);
   }
