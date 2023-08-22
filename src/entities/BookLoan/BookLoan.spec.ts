@@ -11,12 +11,10 @@ test("create an book loan", () => {
   returnDate.setDate(returnDate.getDate() + numberOfDaysToSubtract);
 
   const user = new User({
-    id: "fap-20",
     name: "Matheus Campos",
   });
 
   const book = new Book({
-    id: "BA-012",
     title: "The Things You Can See Only When You Slow Down",
     author: "Haemin Sunim",
     publishDate: publishDate,
@@ -25,7 +23,6 @@ test("create an book loan", () => {
   });
 
   const bookLoan = new BookLoan({
-    id: "LB-012",
     book: book,
     user: user,
     loanDate: loanDate,
@@ -33,7 +30,6 @@ test("create an book loan", () => {
   });
 
   expect(bookLoan).toBeInstanceOf(BookLoan);
-  expect(bookLoan.id).toEqual("LB-012");
   expect(bookLoan.user).toEqual(user);
   expect(bookLoan.loanDate).toEqual(loanDate);
   expect(bookLoan.returnDate).toEqual(returnDate);
@@ -47,12 +43,10 @@ test("cannot create an book loan with return date before loan date", () => {
   returnDate.setDate(returnDate.getDate() - numberOfDaysToSubtract);
 
   const user = new User({
-    id: "fap-20",
     name: "Matheus Campos",
   });
 
   const book = new Book({
-    id: "BA-012",
     title: "The Things You Can See Only When You Slow Down",
     author: "Haemin Sunim",
     publishDate: publishDate,
@@ -62,7 +56,6 @@ test("cannot create an book loan with return date before loan date", () => {
 
   expect(() => {
     return new BookLoan({
-      id: "LB-012",
       book: book,
       user: user,
       loanDate: loanDate,
