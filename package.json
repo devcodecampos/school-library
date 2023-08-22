@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "dev": "ts-node-dev --transpile-only src/index.ts",
     "test": "vitest",
     "test:ui": "vitest --ui"
   },
@@ -13,7 +13,7 @@
     "name": "Matheus Campos",
     "email": "devcodecampos@gmail.com"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/uuid": "^9.0.2",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
@@ -25,6 +25,7 @@
     "vitest": "^0.34.1"
   },
   "dependencies": {
+    "@inquirer/prompts": "^3.0.3",
     "uuid": "^9.0.0"
   }
 }
