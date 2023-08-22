@@ -1,3 +1,5 @@
+import { v4 as uuid } from "uuid";
+
 interface BookProps {
   id: string;
   title: string;
@@ -10,16 +12,19 @@ interface BookProps {
 export class Book {
   private _bookProps: BookProps;
 
-  constructor(bookProps: BookProps) {
-    this._bookProps = bookProps;
+  constructor(bookProps: Omit<BookProps, "id">) {
+    this._bookProps = {
+      id: uuid(),
+      title: bookProps.title,
+      author: bookProps.author,
+      publishDate: bookProps.publishDate,
+      genre: bookProps.genre,
+      quantityAvailable: bookProps.quantityAvailable,
+    };
   }
 
   get id(): string {
     return this._bookProps.id;
-  }
-
-  set id(id: string) {
-    this._bookProps.id = id;
   }
 
   get title(): string {

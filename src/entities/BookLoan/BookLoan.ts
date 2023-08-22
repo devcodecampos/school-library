@@ -1,3 +1,4 @@
+import { v4 as uuid } from "uuid";
 import { Book } from "../Book/Book";
 import { User } from "../User/User";
 
@@ -12,22 +13,24 @@ interface BookLoanProps {
 export class BookLoan {
   private _bookLoanProps: BookLoanProps;
 
-  constructor(bookLoanProps: BookLoanProps) {
+  constructor(bookLoanProps: Omit<BookLoanProps, "id">) {
     const { loanDate, returnDate } = bookLoanProps;
 
     if (returnDate <= loanDate) {
       throw new Error("Invalid Return Date");
     }
 
-    this._bookLoanProps = bookLoanProps;
+    this._bookLoanProps = {
+      id: uuid(),
+      book: bookLoanProps.book,
+      user: bookLoanProps.user,
+      loanDate: bookLoanProps.loanDate,
+      returnDate: bookLoanProps.returnDate,
+    };
   }
 
   get id(): string {
     return this._bookLoanProps.id;
-  }
-
-  set id(id: string) {
-    this._bookLoanProps.id = id;
   }
 
   get book(): Book {

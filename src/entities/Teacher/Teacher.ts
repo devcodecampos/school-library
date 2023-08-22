@@ -8,7 +8,7 @@ interface TeacherProps {
 export class Teacher extends User {
   private _teacherProps: TeacherProps;
 
-  constructor(userProps: UserProps, teacherProps: TeacherProps) {
+  constructor(userProps: Omit<UserProps, "id">, teacherProps: TeacherProps) {
     super(userProps);
     this._teacherProps = teacherProps;
   }

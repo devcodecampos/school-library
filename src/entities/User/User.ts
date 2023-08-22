@@ -1,3 +1,5 @@
+import { v4 as uuid } from "uuid";
+
 export interface UserProps {
   id: string;
   name: string;
@@ -6,16 +8,15 @@ export interface UserProps {
 export class User {
   private _userProps: UserProps;
 
-  constructor(props: UserProps) {
-    this._userProps = props;
+  constructor(userProps: Omit<UserProps, "id">) {
+    this._userProps = {
+      name: userProps.name,
+      id: uuid(),
+    };
   }
 
   get id(): string {
     return this._userProps.id;
-  }
-
-  set id(id: string) {
-    this._userProps.id = id;
   }
 
   get name(): string {
