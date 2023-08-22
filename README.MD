@@ -7,21 +7,19 @@
   <a href="#estrutura">Estrutura do Projeto</a>&nbsp;|&nbsp;
   <a href="#funcionalidades">Funcionalidades</a>&nbsp;|&nbsp;
   <a href="#dependencias">Dependencias</a>&nbsp;|&nbsp;
-  <a href="#execucao">Execução do Projeto</a>&nbsp;|&nbsp;
+  <a href="#execucao">Execução</a>&nbsp;|&nbsp;
   <a href="#testes">Testes</a>&nbsp;|&nbsp;
-  <a href="#license">License</a>
+  <a href="#prompts">Prompts</a>&nbsp;|&nbsp;
+  <a href="#license">Licença</a>
 </p>
 <br>
-
-<p align="center">
-⏳ EM DESENVOLVIMENTO ⏳
-</p>
 
 ## 🎮 Techs <a name="techs"></a>
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [TypeScript](https://www.typescriptlang.org/)
-- [Vitest](https://vitest.dev/)
 - [Node.js](https://nodejs.org/pt-br)
+- [Vitest](https://vitest.dev/)
+- [Inquirer](https://github.com/SBoudrias/Inquirer.js)
 - [Git](https://git-scm.com/)
 
 ## 🧱 Estrutura do Projeto <a name="estrutura"></a>
@@ -66,6 +64,17 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [ ] Listar os ultimos empréstimos de um livro
 - [ ] Ao realizar um empréstimo, o sistema deve registrar os empréstimos em uma nova propriedade chamada histórico de empréstimos nas entidades Aluno e Professor
 
+## 🕹️ Execução do Projeto <a name="execucao"></a>
+   ``` 
+   git clone https://github.com/devcodecampos/school-library.git
+
+   cd school-library
+
+   npm install
+
+   npm run dev
+   ```
+
 ## 📚 Dependencias <a name="dependencias"></a>
   [Typescript](https://www.typescriptlang.org/download)
    ```
@@ -75,6 +84,10 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
    ```
   npm install -D ts-node-dev
    ```
+  [Inquirer](https://github.com/SBoudrias/Inquirer.js)
+   ```
+  npm install @inquirer/prompts
+   ``` 
   [Vitest](https://vitest.dev/guide/)
    ```
   npm install -D vitest
@@ -83,18 +96,13 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
    ```
   npm install -D @vitest/ui
    ```
+  [UUID](https://www.npmjs.com/package/uuid)
+   ```
+  npm install uuid
+   ```
   [ESLint](https://eslint.org/docs/latest/use/getting-started)
    ```
   npm init @eslint/config
-   ```
-
-## 🕹️ Execução do Projeto <a name="execucao"></a>
-   ``` 
-   git clone https://github.com/devcodecampos/school-library.git
-
-   npm install
-
-   npm run dev
    ```
 
 ## 🧪 Testes <a name="testes"></a>
@@ -117,6 +125,64 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
    Test Files  6 passed (6)
         Tests  9 passed (9)
    ```
+
+## 🖥️ Prompts <a name="prompts"></a>
+Exemplos de prompts que o projeto possui:
+
+[App Menu]()
+```
+{ SCHOOL LIBRARY }
+? Select An Option (Use arrow keys)
+  searchBookByTitle
+  addBook
+> registerUser
+  bookLoan
+  bookReturn
+  getUsers
+  getBookLoans
+  getBooks
+  exit
+```
+
+[Adicionar Livro: Adiciona um livro à lista de livros]()
+```
+{ SCHOOL LIBRARY }
+? Select An Option addBook
+? title: The Outsider
+? author: Stephen King
+? publishDate, in the format 2023/12/01: 2018/05/22
+? genre: Horror
+? quantityAvailable: 2
+```
+
+[Registrar Usuário: Registra um novo usuário na biblioteca]()
+```
+{ SCHOOL LIBRARY }
+? Select An Option registerUser    
+? Select An Option
+> student
+  teacher
+
+{ SCHOOL LIBRARY }
+? Select An Option registerUser    
+? Select An Option student
+? name: Matheus
+? studentClass: backend
+? registrationId: fap-01
+```
+
+[Listar Usuários: Lista os usuários da biblioteca]()
+```
+{ SCHOOL LIBRARY }
+? Select An Option getUsers
+[
+  Student {
+    _userProps: { name: 'Matheus', id: '99ff9cd9-9b81-4571-806d-fe136ff6265c' },
+    _studentProps: { studentClass: 'backend', registrationId: 'fap-01' }        
+  }
+]
+```
+
 ## 📝 Licença <a name="license"></a>
 MIT License
 
