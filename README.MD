@@ -44,8 +44,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
           └───User
               └───User.spec.ts
               └───User.ts
-          └───student.mjs
-  └───index.js
+  └───index.ts
   .eslintrc.json
   .gitignore
   package-lock.json
